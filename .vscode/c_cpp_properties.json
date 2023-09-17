@@ -8,12 +8,12 @@
         {
             "name": "PlatformIO",
             "includePath": [
-                "c:/Users/adasa/Documents/PlatformIO/Projects/practica1/include",
-                "c:/Users/adasa/Documents/PlatformIO/Projects/practica1/src",
+                "c:/Users/adasa/Documents/UPC/4t_CURS/INSTRUMENTACIO/IMQSA-Practica1/include",
+                "c:/Users/adasa/Documents/UPC/4t_CURS/INSTRUMENTACIO/IMQSA-Practica1/src",
                 "C:/Users/adasa/.platformio/packages/framework-arduinoespressif32/libraries/WebServer/src",
                 "C:/Users/adasa/.platformio/packages/framework-arduinoespressif32/libraries/FS/src",
                 "C:/Users/adasa/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src",
-                "c:/Users/adasa/Documents/PlatformIO/Projects/practica1/.pio/libdeps/esp32doit-devkit-v1/LiquidCrystal_I2C",
+                "c:/Users/adasa/Documents/UPC/4t_CURS/INSTRUMENTACIO/IMQSA-Practica1/.pio/libdeps/esp32doit-devkit-v1/LiquidCrystal_I2C",
                 "C:/Users/adasa/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src",
                 "C:/Users/adasa/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/config",
                 "C:/Users/adasa/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include",
@@ -218,12 +218,12 @@
             "browse": {
                 "limitSymbolsToIncludedHeaders": true,
                 "path": [
-                    "c:/Users/adasa/Documents/PlatformIO/Projects/practica1/include",
-                    "c:/Users/adasa/Documents/PlatformIO/Projects/practica1/src",
+                    "c:/Users/adasa/Documents/UPC/4t_CURS/INSTRUMENTACIO/IMQSA-Practica1/include",
+                    "c:/Users/adasa/Documents/UPC/4t_CURS/INSTRUMENTACIO/IMQSA-Practica1/src",
                     "C:/Users/adasa/.platformio/packages/framework-arduinoespressif32/libraries/WebServer/src",
                     "C:/Users/adasa/.platformio/packages/framework-arduinoespressif32/libraries/FS/src",
                     "C:/Users/adasa/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src",
-                    "c:/Users/adasa/Documents/PlatformIO/Projects/practica1/.pio/libdeps/esp32doit-devkit-v1/LiquidCrystal_I2C",
+                    "c:/Users/adasa/Documents/UPC/4t_CURS/INSTRUMENTACIO/IMQSA-Practica1/.pio/libdeps/esp32doit-devkit-v1/LiquidCrystal_I2C",
                     "C:/Users/adasa/.platformio/packages/framework-arduinoespressif32/libraries/Wire/src",
                     "C:/Users/adasa/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/config",
                     "C:/Users/adasa/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include",
