@@ -142,7 +142,7 @@ void loop() {
     if (estado_valor <= 8) {
       estado_valor = 10; // Si llega a 5, volver a 1
     }
-    if (estado_valor >= 9) {
+    else if (estado_valor >= 9) {
       estado_valor = 0; // Si llega a 14, volver a 11
     }
     actualizarPantalla(R, B, G, INT, ssid, password);
