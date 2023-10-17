@@ -187,6 +187,7 @@ void loop()
         {
             contador_suma_resta = 1;
         }
+        actualizarPantallaEstatica(tipo_visualizacion, contador_suma_resta);
         actualizarPantalla(tipo_visualizacion, contador_suma_resta);
     }
     else
@@ -207,6 +208,7 @@ void loop()
         {
             contador_suma_resta = 3;
         }
+        actualizarPantallaEstatica(tipo_visualizacion, contador_suma_resta);
         actualizarPantalla(tipo_visualizacion, contador_suma_resta);
     }
     else
@@ -226,6 +228,7 @@ void loop()
             tipo_visualizacion=0;
             contador_suma_resta=1;
         }
+        actualizarPantallaEstatica(tipo_visualizacion, contador_suma_resta);
         actualizarPantalla(tipo_visualizacion, contador_suma_resta);
     }
     else
@@ -241,19 +244,147 @@ void loop()
     }
 }
 
-void actualizarPantalla(int tipo_visualizacion, int contador_suma_resta)
-{
-    // print por pantalla simple para poder ver si da resultado
-    Serial.print("Tipo de visualizacion: ");
-    Serial.println(tipo_visualizacion);
-    Serial.print("Contador suma/resta: ");
-    Serial.println(contador_suma_resta);
-
-    // aqui directamente usando los diferentes tipos de visualización
-    // 0: visualización datos RGB, 1: visualización servicio
-    // y contador_suma_resta
-    // si esta en visualizacion 0 tiene 5 estados: todo junto (rgb), R, G, B e intensidad
-    // si esta en visualizacion 1 tiene 3 estados: SSID, IP, PWD
-    // he puesto en el loop que se recargue cada 2 segundos, si molesta comentala :)
+void mostrar_texto(const char* parte_sup, const char* parte_inf){ //muestra por pantalla valores
+  LCD.setCursor(0, 0);
+  LCD.print(parte_sup);
+  LCD.setCursor(0, 1);
+  LCD.print(parte_inf);
 }
+
+void mostar_datosestatico(const char* dato/*, int valor*/) { // muestra por pantalla textos
+  LCD.setCursor(0, 0);
+  LCD.print(dato);
+  //LCD.setCursor(0, 1);
+  //LCD.print(valor);
+}
+
+void mostar_datos(/*const char* dato,*/ int valor) { // muestra por pantalla textos
+  //LCD.setCursor(0, 0);
+  //LCD.print(dato);
+  LCD.setCursor(0, 1);
+  LCD.print(valor);
+}
+
+void actualizarPantallaEstatica(int tipo_visualizacion, int contador_suma_resta) {
+  LCD.clear();
+  // Limpiar la pantalla, este es el mensaje estático de la pantalla
+  /*if (!Conexion_Sensor()) {
+        LCD.setCursor(0, 0);
+        LCD.print("Sensor no detectado");
+        LCD.setCursor(0, 1);
+        LCD.print("Verifique la conexión");
+        return;
+  }*/
+  if(tipo_visualizacion == 0){
+    switch (contador_suma_resta) { //visualizacion por pantalla de datos y sus valores
+      case 1:
+          LCD.setCursor(0, 0);
+          LCD.print("Vista R  G  B ");
+          break;
+
+      case 2:
+        mostar_datosestatico("  Valor de red");
+        break;
+
+      case 3:
+        mostar_datosestatico(" Valor de green");
+        break;
+
+      case 4:
+        mostar_datosestatico(" Valor de blue");
+        break;
+
+      case 5:
+        mostar_datosestatico(" Valor de luma");
+        break;
+
+      case 6:
+        mostar_datosestatico(" Valor de croma");
+        break;
+    }
+  }
+  else{
+    switch(contador_suma_resta){
+      case 1:
+      mostrar_texto("     Datos", "    Servicio");
+      break;
+      case 2:
+      mostar_datosestatico("      SSID");
+      mostar_datos(SSID);
+      break;
+
+      case 3:
+      mostrar_texto("    Password", Pass);
+      break;
+
+      case 4:
+      mostar_datosestatico("       IP");
+      mostar_datos(IP);
+      break;
+    }
+  } 
+}
+
+void actualizarPantalla(int tipo_visualizacion, int contador_suma_resta) {
+  // Limpiar la pantalla
+  /*if (!Conexion_Sensor()) {
+        LCD.setCursor(0, 0);
+        LCD.print("Sensor no detectado");
+        LCD.setCursor(0, 1);
+        LCD.print("Verifique la conexión");
+        return;
+  }*/
+
+  if(tipo_visualizacion == 0){
+    switch (contador_suma_resta) { //visualizacion por pantalla de datos y sus valores
+    case 0:
+          LCD.setCursor(0, 1);
+          LCD.print("   ");
+          LCD.print(R);
+          LCD.print(" ");
+          LCD.print(G);
+          LCD.print(" ");
+          LCD.print(B);
+          break;
+
+      case 1:
+        mostar_datos(R);
+        break;
+
+      case 2:
+        mostar_datos(G);
+        break;
+
+      case 3:
+      
+        mostar_datos(B);
+        break;
+
+      case 4:
+      
+        mostar_datos(Y);
+        break;
+        
+      case 5:
+        mostar_datos(C);
+        break;
+    }
+    else{
+      case 1:
+        mostar_datos(SSID);
+        break;
+
+      case 2:
+        LCD.setCursor(0, 1);
+        LCD.print(Pass);
+        break;
+
+      case 3:
+  
+        mostar_datos(IP);
+        break;
+    }
+  }
+}
+
 
