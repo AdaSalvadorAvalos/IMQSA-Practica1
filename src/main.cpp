@@ -179,12 +179,25 @@ void loop()
         buttonsum.pressed = true;
         Serial.println("Boton suma presionado :");
         contador_suma_resta++;
-        if (contador_suma_resta == 6 && tipo_visualizacion == 0)
+        if (contador_suma_resta == 8 && tipo_visualizacion == 0)
         {
+          // vis 0:
+          // 1-titulo (rgb, junto)
+          // 2 R
+          // 3 G
+          // 4 B
+          // 5 intensidad
+          // 6 croma
+          // 7 luma
             contador_suma_resta = 1;
         }
-        if (contador_suma_resta == 4 && tipo_visualizacion == 1)
+        if (contador_suma_resta == 5 && tipo_visualizacion == 1)
         {
+          // vis 1:
+          // 1-titulo (defecto)
+          // 2 SSID
+          // 3 IP
+          // 4 PWD
             contador_suma_resta = 1;
         }
         actualizarPantallaEstatica(tipo_visualizacion, contador_suma_resta);
@@ -202,11 +215,11 @@ void loop()
         contador_suma_resta = contador_suma_resta - 1;
         if (contador_suma_resta == 0 && tipo_visualizacion == 0)
         {
-            contador_suma_resta = 5;
+            contador_suma_resta = 7;
         }
         if (contador_suma_resta == 0 && tipo_visualizacion == 1)
         {
-            contador_suma_resta = 3;
+            contador_suma_resta = 4;
         }
         actualizarPantallaEstatica(tipo_visualizacion, contador_suma_resta);
         actualizarPantalla(tipo_visualizacion, contador_suma_resta);
